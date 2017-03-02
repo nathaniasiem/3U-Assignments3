@@ -25,6 +25,7 @@ public class A3Q1 {
 
         //create new robot
         RobotSE karel = new RobotSE(kw, 2, 0, Direction.EAST);
+
         //create another robot
         RobotSE merlion = new RobotSE(kw, 4, 0, Direction.EAST);
         //set colour for merlion
@@ -48,14 +49,12 @@ public class A3Q1 {
             if (karel.canPickThing()) {
                 break;
             }
-
         }
         //move merlion until reach a barrier
         while (true) {
             if ((merlion.frontIsClear())) {
                 merlion.move();
             }
-
         }
     }
 }
