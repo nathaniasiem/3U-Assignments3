@@ -26,19 +26,25 @@ public class A3Q2 {
 
         //create a square wall
         new Wall(kw, 1, 1, Direction.EAST);
-        new Wall(kw,1,1,Direction.NORTH);
-        new Wall(kw,1,1,Direction.WEST);
-        new Wall(kw,1,1,Direction.SOUTH);
-        
+        new Wall(kw, 1, 1, Direction.NORTH);
+        new Wall(kw, 1, 1, Direction.WEST);
+        new Wall(kw, 1, 1, Direction.SOUTH);
+
         //create loop
-        while(true){
+        for (int i = 0; i < 8; i++) {
             //move karel around the square
             karel.move();
             karel.move();
             karel.turnRight();
-            
+            karel.move();
+            karel.move();
+            karel.turnRight();
+            karel.move();
+            karel.move();
+            karel.turnRight();
+            karel.move();
+            karel.move();
+            karel.turnRight();
         }
-        
-    
     }
 }
