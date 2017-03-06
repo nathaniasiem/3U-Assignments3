@@ -49,12 +49,28 @@ public class A3Q3 {
         new Thing(kw, 2, 3);
         new Thing(kw, 3, 1);
 
-        //move karel around the room
-        while (!karel.canPickThing()) {
+        //create loop to move karel around the room
+        while (true) {
             karel.move();
-        
             
-
+            if(!(karel.frontIsClear())&& karel.isFacingEast()){
+                karel.turnRight();
+                karel.move();
+                karel.turnRight();
+            }
+                //ask karel if front is not clear
+            if (!(karel.frontIsClear())) {
+                karel.turnLeft();
+                karel.move();
+                karel.turnLeft();
+            }
+            
+            // if there are things
+            //pick them all up
+            while (karel.canPickThing()) {
+                karel.pickThing();
+            
+            }
         }
     }
-
+}
