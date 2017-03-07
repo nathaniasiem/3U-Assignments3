@@ -52,24 +52,38 @@ public class A3Q3 {
         //create loop to move karel around the room
         while (true) {
             karel.move();
-            
-            if(!(karel.frontIsClear())&& karel.isFacingEast()){
+
+            if (karel.getAvenue() == 4 && karel.getStreet() == 3) {
+                karel.pickThing();
+                karel.turnLeft();
+                karel.move();
+                karel.turnLeft();
+                break;
+            }
+            if (!(karel.frontIsClear()) && karel.isFacingEast()) {
                 karel.turnRight();
                 karel.move();
                 karel.turnRight();
             }
-                //ask karel if front is not clear
+            //ask karel if front is not clear
             if (!(karel.frontIsClear())) {
                 karel.turnLeft();
                 karel.move();
                 karel.turnLeft();
             }
-            
             // if there are things
             //pick them all up
-            while (karel.canPickThing()) {
+            if (karel.canPickThing()) {
                 karel.pickThing();
-            
+            }
+        }
+        while(true){
+            karel.move();
+            if(!(karel.frontIsClear()) && karel.isFacingWest()){
+                karel.turnRight();
+                karel.move();
+                karel.turnRight();
+                break;
             }
         }
     }
