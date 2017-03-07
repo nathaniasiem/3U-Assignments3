@@ -52,7 +52,7 @@ public class A3Q3 {
         //create loop to move karel around the room
         while (true) {
             karel.move();
-
+            //if karel reaches intersection(3,4),turn to go back home
             if (karel.getAvenue() == 4 && karel.getStreet() == 3) {
                 karel.pickThing();
                 karel.turnLeft();
@@ -60,6 +60,8 @@ public class A3Q3 {
                 karel.turnLeft();
                 break;
             }
+            //when karel has a barrier and is facing east
+            //turn to avoid from crashing
             if (!(karel.frontIsClear()) && karel.isFacingEast()) {
                 karel.turnRight();
                 karel.move();
@@ -77,9 +79,10 @@ public class A3Q3 {
                 karel.pickThing();
             }
         }
-        while(true){
+        //create loop for karel to go back home
+        while (true) {
             karel.move();
-            if(!(karel.frontIsClear()) && karel.isFacingWest()){
+            if (!(karel.frontIsClear()) && karel.isFacingWest()) {
                 karel.turnRight();
                 karel.move();
                 karel.turnRight();
