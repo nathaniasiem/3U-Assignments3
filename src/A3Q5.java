@@ -40,19 +40,15 @@ public class A3Q5 {
         kw.showThingCounts(true);
 
         //program karel to move
-        while (true) {
-            if (karel.getStreet() == 2 && karel.getAvenue() == 2 && karel.canPickThing()) {
-                karel.pickThing();
-            }
+        for (int i = 0; i < 10; i++) {
+            karel.pickThing();
             karel.move();
-            if (karel.getStreet() == 2 && karel.getAvenue() == 5) {
-                karel.putThing();
-                karel.turnAround();
-            }
-            if (karel.getStreet() == 2 && karel.getAvenue() == 2) {
-                karel.turnAround();
-            }
-            
-            }
+            karel.putThing();
+            karel.turnAround();
+            karel.move();
+            karel.turnAround();
+
+
         }
     }
+}
