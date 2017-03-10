@@ -39,7 +39,8 @@ public class A3Q5 {
         //turn on thing labels
         kw.showThingCounts(true);
 
-        //program karel to move
+        //program karel to move and bring things
+        //create a for loop
         for (int i = 0; i < 10; i++) {
             karel.pickThing();
             karel.move();
@@ -47,8 +48,8 @@ public class A3Q5 {
             karel.turnAround();
             karel.move();
             karel.turnAround();
-
-
         }
+        //move karel back to the pile of things
+        karel.move();
     }
 }
