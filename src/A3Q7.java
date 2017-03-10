@@ -65,18 +65,37 @@ public class A3Q7 {
         //program karel to move around the set of squares
         //create a loop
         while (true) {
+            //karel moves around square 4
             for (int i = 0; i < 4; i++) {
                 karel.move();
                 karel.move();
                 karel.move();
                 karel.turnLeft();
             }
-
+            //karel moves around square 3
             for (int i = 0; i < 4; i++) {
                 karel.move();
                 karel.move();
                 karel.move();
                 karel.turnRight();
+            }
+            //karel moves around square 2
+            for (int i = 0; i < 4; i++) {
+                karel.turnLeft();
+                karel.move();
+                karel.move();
+                karel.move();
+            }
+            //karel moves around square 1
+            for (int i = 0; i < 4; i++) {
+                karel.turnRight();
+                karel.move();
+                karel.move();
+                karel.move();
+            }
+            //if karel is back at the starting point (3,3), he stops
+            if (karel.getAvenue() == 3 && karel.getStreet() == 3) {
+                break;
             }
         }
     }
